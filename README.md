@@ -2,7 +2,7 @@
 Create and manage theme settings in the WordPress Customizer using a structured array.
 This is perfect for themes and will likely get included into WP Rig.
 
-##How To Use: 
+## How To Use:
 - Include the class in your theme's functions.php
 - Create your args array and pass into class when instantiated, like this:
 ```
@@ -38,11 +38,11 @@ $theme_settings = new EZ_Customizer_Settings($settings_config);
 ```
 - That's it! It's that EZ!
 
-##How it works:
+## How it works:
 The structure of the array attempts to follow the core function args in WordPress
 as much as possible, however, some liberties were taken to improve simplicity
 
-###Array structure details
+### Array structure details
 - **theme_name**: The name of your theme (without spaces - like an ID)
 - **settings_id**: Unique ID for these settings (for storage in the DB)(I might make this optional in the future)
 - **sections**: Define each new section to be added to the customizer. We lumped in id for simplicity. 'title' allows for localization
