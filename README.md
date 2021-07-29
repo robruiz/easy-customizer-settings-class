@@ -48,6 +48,10 @@ as much as possible, however, some liberties were taken to improve simplicity
 - **sections**: Define each new section to be added to the customizer. We lumped in id for simplicity. 'title' allows for localization
   
   - Refer to [WP Codex Docs](https://developer.wordpress.org/reference/classes/wp_customize_section/__construct/) for all args
-- **settings**: For the most part, all args from [this WP Codex function](https://developer.wordpress.org/reference/classes/wp_customize_setting/__construct/) apply. We changed 'transport' to 'refresh' because it makes more sense
-
+- **settings**: Each setting is it's own array in this array of settings. We tried to combine the args for settings and controls as much as possible to keep this as simple as possible. For the most part, all args from [this WP Codex function](https://developer.wordpress.org/reference/classes/wp_customize_setting/__construct/) apply. Also All control args can be passed in, [view Codex docs for controls](https://developer.wordpress.org/reference/classes/wp_customize_control/__construct/) for more details on how those work. We changed 'transport' to 'refresh' because it makes more sense
+  - **type**: (optional) All base core types are currently supported. Type is optional, if not included, a basic text field is assumed. The following more complex types are also supported:
+    - Basic Types include: 'text', 'checkbox', 'textarea', 'radio', 'select', and 'dropdown-pages'. Additional input types such as 'email', 'url', 'number', 'hidden', and 'date' are supported implicitly.
+    - **color** - Color Picker
+    - **date** - Data/Time Picker
+    - **media** - Image/Attachment Selection
 If you have any ideas for improvement, please submit an issue or a PR. Thanks!
