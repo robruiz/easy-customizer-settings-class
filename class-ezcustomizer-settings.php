@@ -41,10 +41,8 @@ class EZ_Customizer_Settings {
     private function register_sections(){
         foreach($this->args['sections'] as $section){
             $section_id = $this->settings_id.'_'.$section['id'].'_section';
-            $section_args = array(
-                'title'      => __( $section['title'], $this->i18n ),
-                'priority'   => $section['priority'],
-            );
+            $section_args = $section;
+            $section_args['title'] = __( $section['title'], $this->i18n );
 
             $this->wp_customize->add_section( $section_id,  $section_args);
         }
